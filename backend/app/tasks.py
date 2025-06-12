@@ -47,3 +47,6 @@ celery.conf.beat_schedule = {
         "schedule": crontab(minute=0, hour=0),
     }
 }
+
+# Ensure the persistent beat scheduler can write its schedule file
+celery.conf.beat_schedule_filename = "/tmp/celerybeat-schedule"
